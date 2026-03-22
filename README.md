@@ -147,8 +147,6 @@ for tool in nextflow trim_galore fastqc STAR featureCounts; do
 done
 
 
-
-
 # Keep-alive (run in a separate terminal)
 while true; do sleep 240 && echo "keeping awake..."; done
 
@@ -158,15 +156,14 @@ mkdir -p fastq ref results
 nextflow run pipeline.nf -resume
 
 
-
-
-
-
-
-
+#Install FASTQC TRIM-GALORE STAR SUBREAD FEATURE COUNT
 conda install -y -c bioconda -c conda-forge subread multiqc star fastqc && \
 pip install cutadapt && \
 curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.6.10.tar.gz | tar xz && \
 sudo mv TrimGalore-0.6.10/trim_galore /usr/local/bin/ && \
 wget -qO- https://get.nextflow.io | bash && \
+sudo mv nextflow /usr/local/bin/
+
+#NEXTFLOW
+wget -qO- https://get.nextflow.io | bash
 sudo mv nextflow /usr/local/bin/
