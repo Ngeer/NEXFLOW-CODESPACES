@@ -1,12 +1,8 @@
 {
-  "name": "RNAseq Pipeline",
+  "name": "Bioinformatics",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "bash .devcontainer/setup.sh",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "nextflow.nextflow"
-      ]
-    }
-  }
+  "features": {
+    "ghcr.io/devcontainers/features/conda:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/install.sh"
 }
